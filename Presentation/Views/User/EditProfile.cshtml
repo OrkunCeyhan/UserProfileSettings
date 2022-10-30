@@ -1,0 +1,73 @@
+﻿@model Entity.Concrete.User
+@{
+    ViewData["Title"] = "User Profile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="container">
+    <form action="" method="post">
+
+        <input type="hidden" asp-for="userId" name="userId"/>
+        <input type="hidden" asp-for="passWord" name="passWord"/>
+     
+        <!--
+
+            Hıdden ile degıstırılmesı ıstenmeyen verılerı saklamak 
+             ne kadar saglıklı bılmıyorum
+            kontrol edılmesı gerekır.
+            ya da data acceste yeni bir update metodu yazılabılır buna ozel.
+
+        -->
+
+
+         <div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">E-Mail</label>
+                <input name="eMail" asp-for="eMail" class="form-control" type="email"/>
+            </div>        
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">Nick Name</label>
+                <input name="nickName" asp-for="nickName" class="form-control" type="text"/>
+            </div>        
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">Full Name</label>
+                <input name="fullName" asp-for="fullName" class="form-control" type="text"/>
+            </div>        
+        </div>
+         <div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">Phone Number</label>
+                <input name="phoneNumber" asp-for="phoneNumber" class="form-control" style=""  type="tel" />
+            </div>        
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">Cinsiyet</label>
+                <input name="gender" asp-for="gender" class="form-control" type="text"/>
+            </div>        
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">Birth Date</label>
+                <input name="birthDate" asp-for="birthDate" class="form-control" type="text"/>
+            </div>        
+        </div>
+       <div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">Image Url</label>
+                <input name="imageUrl" asp-for="imageUrl" class="form-control" type="text"/>
+            </div>        
+        </div>
+
+    <button type="submit" class="btn btn-outline-dark">
+        Save
+    </button>
+
+    </form>
+
+    
+</div>

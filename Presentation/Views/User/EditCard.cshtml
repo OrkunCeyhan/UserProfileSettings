@@ -1,0 +1,51 @@
+﻿@model Entity.Concrete.User
+@{
+    ViewData["Title"] = "My Cards";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="container">
+    <form action="" method="post">
+
+        <input type="hidden" asp-for="userId" name="userId"/>
+        <input type="hidden" asp-for="passWord" name="passWord"/>
+        @*<input type="hidden" asp-for="adresId" name="paymentCardId"/>*@
+        <input type="hidden" asp-for="eMail" name="eMail"/>
+        <input type="hidden" asp-for="nickName" name="nickName"/>
+        <input type="hidden" asp-for="fullName" name="fullName"/>
+        <input type="hidden" asp-for="phoneNumber" name="phoneNumber"/>
+        <input type="hidden" asp-for="birthDate" name="birthDate"/>
+        <!--
+
+            Hıdden ile degıstırılmesı ıstenmeyen verılerı saklamak 
+             ne kadar saglıklı bılmıyorum
+            kontrol edılmesı gerekır.
+
+            ya da data acceste yeni bir update metodu yazılabılır buna ozel.
+
+        -->
+       
+          
+       @* <div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">Card Id</label>
+                <input name="adresId" asp-for="paymentCardId" class="form-control" type="text"/>
+            </div>        
+        </div>*@
+        @*<div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">Card Name</label>
+                <input name="name" asp-for="PaymentCard.name" class="form-control" type="text"/>
+            </div>        
+        </div>*@
+       
+
+       
+    <button type="submit" class="btn btn-outline-dark">
+        Save
+    </button>
+
+    </form>
+
+    
+</div>

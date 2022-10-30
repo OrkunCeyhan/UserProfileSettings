@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "My Adresses";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@using Entity.Concrete
+@model List<Adres>
+
+<h1>My Adresses</h1>
+
+
+<div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 p-1 me-3 mt-2 border border-1 rounded">
+                
+                <div class="col-12 text-end">
+                    <a data-bs-toggle="dropdown" class="nav-link">
+                    <i data-feather="settings" style="color:gray" class="align-middle"></i>
+                    </a>
+                    <div style="background-color:transparent" class="dropdown-menu dropdown-menu-end">
+                            <a href="~/Adres/EditAdress/@item.adresId" style="background-color:transparent"  class="dropdown-item"><i class="align-middle me-1" data-feather="edit"></i> Edit</a>
+						    <a href="~/Adres/DeleteAdress/@item.adresId" style="background-color:transparent" class="dropdown-item" ><i class="align-middle me-1" data-feather="trash"></i>Delete</a>							
+                    </div>
+                    
+                </div>
+                <div class="col-12 m-3">
+                    @item.name
+                </div>
+                <div class="col-12 m-3">
+                    adres line 1 <!--Mahalle Sokak Apt.-->
+                </div>
+                <div class="col-12 m-3">
+                    adres line 2 <!--Semt/Ilce/Il-->
+                </div>
+            </div>  
+        }
+
+        <div class="col-md-3 text-center p-1 me-3 mt-2 border border-1 rounded ">
+ 
+        <div class="col-12 mt-2">
+            <a asp-controller="Adres" asp-action="AddAdress" >
+                <i  data-feather="plus-circle" style="width:30px; height:30px; color:gray">
+                   
+                </i>
+            </a>
+        </div>
+        </div>         
+          
+    </div>   
+    <div>  
+</div>
+
+      

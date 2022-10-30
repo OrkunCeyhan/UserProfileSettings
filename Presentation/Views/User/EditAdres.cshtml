@@ -1,0 +1,52 @@
+﻿@using Entity.Concrete
+@model List<Adres>
+    ViewData["Title"] = "My Adresses";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="container">
+    @*<form action="" method="post">*@
+
+        @*<input type="hidden" asp-for="userId" name="userId"/>
+        <input type="hidden" asp-for="adresId" name="adresId"/>*@
+        <!--
+
+            Hıdden ile degıstırılmesı ıstenmeyen verılerı saklamak 
+             ne kadar saglıklı bılmıyorum
+            kontrol edılmesı gerekır.
+
+        -->
+        @*            
+        <div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">Adress Name</label>
+                <input name="name" asp-for="name" class="form-control" type="text"/>
+            </div>        
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <label class="text-dark mb-3 mt-3">Adress</label>
+                <input name="adress" asp-for="adress" class="form-control" type="text"/>
+            </div>        
+        </div>*@
+
+        
+
+    @*<button type="submit" class="btn btn-outline-dark">
+        Save
+    </button>
+
+    </form>*@
+
+    
+    @foreach (var item in Model)
+    {
+        <span>
+            @item.adress
+        </span>
+       <span>
+           @item.name
+       </span>
+        
+    }
+</div>

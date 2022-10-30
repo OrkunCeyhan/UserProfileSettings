@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "EditAdress";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+@using Entity.Concrete
+@model Adres
+
+<h1>EditAdress</h1>
+
+<form method="post">
+
+    <div class="col-12 mt-3">
+        <input type="text" name="name" asp-for="name" class="form-control" />
+    </div>
+
+    <div class="col-12 mt-3">
+        <input type="text" name="adress" asp-for="adress" class="form-control" />
+    </div>
+
+    <input type="hidden" asp-for="adresId"/>
+    <input type="hidden" asp-for="userId"/>
+    <div class="mt-3">
+        <input type="submit" value="Save" class="btn btn-dark"/>
+    </div>
+    
+</form>

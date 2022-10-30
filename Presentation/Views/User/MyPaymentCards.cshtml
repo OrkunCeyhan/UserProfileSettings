@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "My Payment Cards";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@using Entity.Concrete
+@model List<PaymentCard>
+
+<link rel="stylesheet" href="~/user/css/paymentCard.css">
+
+
+<h1>My Payment Cards</h1>
+<!--
+
+    Burası adreslerım ıcın ındex olacak buradakı 
+    verılerı jquery ıle url degısmeden dondurecegız.
+
+-->
+@*<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+
+             <input type="text" class="form-control" name="customerName" id="customerName" placeholder="İsim">
+            </div>
+        </div>
+         <div class="col-md-6">
+            <div class="form-group">
+
+             <input type="text" class="form-control" name="customerName" id="customerName" placeholder="İsim">
+            </div>
+        </div>      
+        </div>
+
+</div>*@
+
+<div class="container-fluid">
+    <div class="row">
+            @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+        <div class="card border border-1">
+          <figure class="card__figure">
+            <div>
+              <a style="background-color:transparent;border-color:gray;" data-bs-toggle="dropdown" class="nav-link  position-absolute top-0 end-0">
+                  <i data-feather="settings" style="color:gray" class="align-middle"></i>
+              </a>
+
+
+
+							<div style="background-color:transparent" class="dropdown-menu text-center dropdown-menu-end" >
+								<a style="background-color:transparent"  class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="edit"></i> Edit</a>
+								<a style="background-color:transparent" class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="trash"></i>Delete</a>
+								
+							</div>
+
+
+
+            </div>
+            <div class="text-center mt-4" style="color: #f7f4f8">@item.name</div>
+          </figure>
+          <div class="card__reader">
+            <div class="card__reader--risk card__reader--risk-one"></div>
+            <div class="card__reader--risk card__reader--risk-two"></div>
+            <div class="card__reader--risk card__reader--risk-three"></div>
+            <div class="card__reader--risk card__reader--risk-four"></div>
+          </div>
+          <p class="card__number">5032 9334 3764 9846</p>
+          <div class="card__dates mt-3">
+            <span class=""> Valid Thru</span>
+            <span class="card__dates--second">09/19</span>
+          </div>
+          <p class="card__name mb-2">Abdussamet Solak</p>
+        </div>
+      
+   </div>
+
+
+
+    }
+
+
+    <div class="row col-md-4 align-items-center text-center ">
+ 
+        <span>
+            <a>
+                <i  data-feather="plus-circle" style="width:30px; height:30px; color:gray">
+                   
+                </i>
+            </a>
+        </span>
+            
+
+ 
+    </div>
+
+
+
+    </div>
+   
+</div>
+
+
